@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ChakrounAnas.turbo-console-log",
+    "astro-build.astro-vscode"
+  ]
+}
