@@ -1,0 +1,41 @@
+---
+// src/components/TwitterEmbed.astro
+import { onMount } from 'astro:client'
+import { EmbedControl } from '@repo/core'
+
+onMount(async () => {
+  const embedContainer = document.querySelector('.twitter-embed')
+  if (embedContainer) {
+    try {
+    } catch (error) {
+      console.error('Failed to load Twitter embed:', error)
+      embedContainer.innerHTML = `<div class="twitter-error">Failed to load Twitter content</div>`
+    }
+  }
+})
+interface Props {
+  url: string
+}
+
+const { url } = Astro.props
+---
+
+<div class="twitter-embed">
+  <!-- 嵌入内容将在此处渲染 -->
+</div>
+
+<style>
+  .twitter-embed {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .twitter-error {
+    color: #ff4d4f;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ffccc7;
+    border-radius: 4px;
+    background: #fff2f0;
+  }
+</style>

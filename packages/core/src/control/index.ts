@@ -2,26 +2,26 @@ import { type EmbeddedInstance, type RenderInOptions } from "../embeds/embed";
 import { TwitterEmbed } from "../embeds/twitter-embed";
 import { UrlParser } from "../url-parser";
 
-export class EmbedContorl {
+export class EmbedControl {
   static async createEmbed(url: string) {
     const embed = new UrlParser(url);
 
     if (embed.isYoutube) {
-      return await EmbedContorl.createYoutubePlayer(embed.getYoutubeVideoId()); 
+      return await EmbedControl.createYoutubePlayer(embed.getYoutubeVideoId()); 
     }
 
     if (embed.isTwitter) {
-      return await EmbedContorl.createTwitterEmbed(embed.getTwitterPostId()); 
+      return await EmbedControl.createTwitterEmbed(embed.getTwitterPostId()); 
     }
   }
 
   static createYoutubePlayer(videoId: string) {
     // todu...
-    // return new EmbedContorl();
+    // return new EmbedControl();
   }
   
   static createTwitterEmbed(postId: string) {
-    return new EmbedContorl(new TwitterEmbed(postId));
+    return new EmbedControl(new TwitterEmbed(postId));
   }
 
   private embed: EmbeddedInstance;
